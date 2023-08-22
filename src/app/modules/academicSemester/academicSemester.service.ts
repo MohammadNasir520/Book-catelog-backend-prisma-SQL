@@ -1,6 +1,8 @@
 import { AcademicSemester, PrismaClient } from '@prisma/client';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
+import { IPaginationOptions } from '../../../interfaces/pagination';
+import { IAcademicSemesterFilterRequest } from './academicSemister.interface';
 
 const prisma = new PrismaClient();
 
@@ -15,11 +17,23 @@ const insertIntoDB = async (
 };
 
 const getAllFromDB = async (
-  filters,
-  options
+  filters: IAcademicSemesterFilterRequest,
+  options: IPaginationOptions
 ): Promise<IGenericResponse<AcademicSemester[]>> => {
   const { page, limit, skip } = paginationHelpers.calculatePagination(options);
+  const { searchTerm, ...filterData } = filters;
+  console.log(filterData);
   const result = await prisma.academicSemester.findMany({
+    where: {
+      OR: [
+        {
+          title: {
+            contains: searchTerm,
+            mode: 'insensitive',
+          },
+        },
+      ],
+    },
     skip,
     take: limit,
   });
