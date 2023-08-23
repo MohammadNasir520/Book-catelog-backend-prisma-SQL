@@ -71,8 +71,8 @@ model Student {
 
   academicSemesterId String
 
-  academicDepartment    AcademicDepartment @relation(fields: [academicDepartementId], references: [id])
-  academicDepartementId String
+  academicDepartment   AcademicDepartment @relation(fields: [academicDepartmentId], references: [id])
+  academicDepartmentId String
 
   academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
   academicFacultyId String
@@ -96,8 +96,8 @@ model Faculty {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  academicDepartment    AcademicDepartment @relation(fields: [academicDepartementId], references: [id])
-  academicDepartementId String
+  academicDepartment   AcademicDepartment @relation(fields: [academicDepartmentId], references: [id])
+  academicDepartmentId String
 
   academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
   academicFacultyId String
