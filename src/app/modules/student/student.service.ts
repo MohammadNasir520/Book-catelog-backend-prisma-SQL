@@ -13,11 +13,11 @@ import { IStudentFilterRequest } from './student.interface';
 const insertIntoDB = async (data: Student): Promise<Student> => {
   const result = await prisma.student.create({
     data,
-    // include: {
-    //   academicFaculty: true,
-    //   academicDepartment: true,
-    //   academicSemester: true,
-    // },
+    include: {
+      academicFaculty: true,
+      academicDepartment: true,
+      academicSemester: true,
+    },
   });
   return result;
 };
@@ -109,8 +109,42 @@ const getByIdFromDB = async (id: string): Promise<Student | null> => {
   return result;
 };
 
+const updateIntoDB = async (
+  id: string,
+  payload: Partial<Student>
+): Promise<Student> => {
+  const result = await prisma.student.update({
+    where: {
+      id: id,
+    },
+    data: payload,
+    include: {
+      academicDepartment: true,
+      academicFaculty: true,
+      academicSemester: true,
+    },
+  });
+  return result;
+};
+
+const deleteFromDB = async (id: string) => {
+  const result = await prisma.student.delete({
+    where: {
+      id: id,
+    },
+    include: {
+      academicDepartment: true,
+      academicFaculty: true,
+      academicSemester: true,
+    },
+  });
+  return result;
+};
+
 export const StudentService = {
   insertIntoDB,
   getAllFromDB,
   getByIdFromDB,
+  updateIntoDB,
+  deleteFromDB,
 };

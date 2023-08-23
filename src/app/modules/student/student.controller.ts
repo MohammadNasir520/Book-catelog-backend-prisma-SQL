@@ -7,7 +7,6 @@ import { studentFilterableFields } from './student.constants';
 import { StudentService } from './student.service';
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
-  console.log('body', req.body);
   const result = await StudentService.insertIntoDB(req.body);
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -41,8 +40,34 @@ const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const updateIntoDB = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const payload = req.body;
+
+  const result = await StudentService.updateIntoDB(id, payload);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Student updated successfully',
+    data: result,
+  });
+});
+const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+
+  const result = await StudentService.deleteFromDB(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Student deleted successfully',
+    data: result,
+  });
+});
+
 export const StudentController = {
   insertIntoDB,
   getAllFromDB,
   getByIdFromDB,
+  updateIntoDB,
+  deleteFromDB,
 };
