@@ -25,26 +25,26 @@ model AcademicSemester {
   @@map("academic_semesters")
 }
 
-model academicFaculty {
+model AcademicFaculty {
   id String @id @default(uuid())
 
   title String
 
   createdAt           DateTime             @default(now())
   updatedAt           DateTime             @updatedAt
-  AcademicDepertments AcademicDepertment[]
+  AcademicDepartments AcademicDepartment[]
   students            Student[]
   faculties           Faculty[]
 
   @@map("academic_faculty")
 }
 
-model AcademicDepertment {
+model AcademicDepartment {
   id                String          @id @default(uuid())
   title             String
   createdAt         DateTime        @default(now())
   updatedAt         DateTime        @updatedAt
-  academicFaculty   academicFaculty @relation(fields: [academicFacultyId], references: [id])
+  academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
   academicFacultyId String
   students          Student[]
   faculties         Faculty[]
@@ -71,10 +71,10 @@ model Student {
 
   academicSemesterId String
 
-  academicDepartment    AcademicDepertment @relation(fields: [academicDepartementId], references: [id])
+  academicDepartment    AcademicDepartment @relation(fields: [academicDepartementId], references: [id])
   academicDepartementId String
 
-  academicFaculty   academicFaculty @relation(fields: [academicFacultyId], references: [id])
+  academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
   academicFacultyId String
 
   @@map("students")
@@ -96,10 +96,10 @@ model Faculty {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  academicDepartment    AcademicDepertment @relation(fields: [academicDepartementId], references: [id])
+  academicDepartment    AcademicDepartment @relation(fields: [academicDepartementId], references: [id])
   academicDepartementId String
 
-  academicFaculty   academicFaculty @relation(fields: [academicFacultyId], references: [id])
+  academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
   academicFacultyId String
 
   @@map("faculties")
