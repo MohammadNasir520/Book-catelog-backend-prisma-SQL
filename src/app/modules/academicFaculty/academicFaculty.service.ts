@@ -1,4 +1,4 @@
-import { AcademicDepartment, AcademicFaculty, Prisma } from '@prisma/client';
+import { AcademicFaculty, Prisma } from '@prisma/client';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
@@ -85,27 +85,21 @@ const getByIdFromDB = async (id: string): Promise<AcademicFaculty | null> => {
 
 const updateOneInDB = async (
   id: string,
-  payload: Partial<AcademicDepartment>
-): Promise<AcademicDepartment> => {
-  const result = await prisma.academicDepartment.update({
+  payload: Partial<AcademicFaculty>
+): Promise<AcademicFaculty> => {
+  const result = await prisma.academicFaculty.update({
     where: {
       id,
     },
     data: payload,
-    include: {
-      academicFaculty: true,
-    },
   });
   return result;
 };
 
-const deleteByIdFromDB = async (id: string): Promise<AcademicDepartment> => {
-  const result = await prisma.academicDepartment.delete({
+const deleteByIdFromDB = async (id: string): Promise<AcademicFaculty> => {
+  const result = await prisma.academicFaculty.delete({
     where: {
       id,
-    },
-    include: {
-      academicFaculty: true,
     },
   });
   return result;
