@@ -89,6 +89,11 @@
             "date": 1692871257066,
             "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-24-08-16-error.log",
             "hash": "8a9658b983b8495077e4651ab2fa6b3c87d362a5df878deb33ea88b1403acca4"
+        },
+        {
+            "date": 1692875866957,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-24-08-17-error.log",
+            "hash": "18b16adafd712ad56470d4a265b17ed547c5e9464735752fe6aade0cbf497004"
         }
     ],
     "hashType": "sha256"
