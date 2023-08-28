@@ -129,6 +129,31 @@
             "date": 1692965201495,
             "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-25-08-18-success.log",
             "hash": "595fffbb9f5c321314c56982b9eeaaeea2c7dce6ed1ee8647b390fef3d819449"
+        },
+        {
+            "date": 1692993326195,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-26-08-01-success.log",
+            "hash": "d9bb35e6f868aea92d130c24e87d00f9e3c954cb1273334b4527bf68925ddc8b"
+        },
+        {
+            "date": 1692993966691,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-26-08-02-success.log",
+            "hash": "2a7305f1cfc1f26cfd73d8015f8c0af4fc6532e4fa5c978bd97910e5ff1e1fe6"
+        },
+        {
+            "date": 1693134784400,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-27-08-17-success.log",
+            "hash": "7501bd9a9edc82cd3eae3b4a54f63563d985fdf86ec1b97408cfddbe5e483244"
+        },
+        {
+            "date": 1693207173703,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-28-08-13-success.log",
+            "hash": "2baf86796717fdbe75826ee12d8406aa8f30593ee9516a6361e83200ad6c3b57"
+        },
+        {
+            "date": 1693209682765,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-28-08-14-success.log",
+            "hash": "5f80be79e8028daf70dc5d61e1f01dbc08858c6d8dc2bdca46999faf5843c748"
         }
     ],
     "hashType": "sha256"

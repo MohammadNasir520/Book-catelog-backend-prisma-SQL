@@ -1,12 +1,29 @@
-import { Course } from '@prisma/client';
 import prisma from '../../../shared/prisma';
 
-const insertIntoDB = async (data: Course) => {
-  const result = await prisma.course.create({
-    data: data,
+const insertIntoDB = async (data: any) => {
+  const { preRequisiteCourses, ...coursesDAta } = data;
+
+  const newCourse = await prisma.$transaction(async transactionClient => {
+    const result = await transactionClient.course.create({
+      data: coursesDAta,
+    });
+
+    if (preRequisiteCourses && preRequisiteCourses.length > 0) {
+      for (let index = 0; index < preRequisiteCourses.length; index++) {
+        const createPreRequisite =
+          await transactionClient.courseToPrerequisite.create({
+            data: {
+              courseId: result.id,
+              preRequisiteID: preRequisiteCourses[index].courseId,
+            },
+          });
+
+        console.log('c', createPreRequisite);
+      }
+    }
+    return result;
   });
-  return result;
-  console.log(data);
+  return newCourse;
 };
 
 // const getAllFromDB = async (
