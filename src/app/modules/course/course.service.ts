@@ -14,11 +14,11 @@ import {
 } from './course.interface';
 
 const insertIntoDB = async (data: ICourseCreateData) => {
-  const { preRequisiteCourses, ...coursesDAta } = data;
+  const { preRequisiteCourses, ...courseData } = data;
 
   const newCourse = await prisma.$transaction(async transactionClient => {
     const result = await transactionClient.course.create({
-      data: coursesDAta,
+      data: courseData,
     });
 
     if (!result) {
@@ -26,7 +26,7 @@ const insertIntoDB = async (data: ICourseCreateData) => {
     }
 
     if (preRequisiteCourses && preRequisiteCourses.length > 0) {
-      asyncForEach(
+      await asyncForEach(
         preRequisiteCourses,
         async (preRequisiteCourse: IPrerequisiteCourseRequest) => {
           const createPreRequisite =
@@ -200,14 +200,18 @@ const updateOneInDB = async (
           });
         }
       );
-      for (let index = 0; index < newPrerequisite.length; index++) {
-        await transactionClient.courseToPrerequisite.create({
-          data: {
-            courseId: id,
-            preRequisiteID: newPrerequisite[index].courseId,
-          },
-        });
-      }
+
+      await asyncForEach(
+        newPrerequisite,
+        async (insertPrerequisite: IPrerequisiteCourseRequest) => {
+          await transactionClient.courseToPrerequisite.create({
+            data: {
+              courseId: id,
+              preRequisiteID: insertPrerequisite.courseId,
+            },
+          });
+        }
+      );
     }
     return result;
   });
