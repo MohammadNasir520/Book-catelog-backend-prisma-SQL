@@ -169,6 +169,31 @@
             "date": 1693256635283,
             "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-29-08-03-error.log",
             "hash": "db84fdd562238da4c28a12bfa5ad47f8432a72cb57f8512a20c3a1ef89d47226"
+        },
+        {
+            "date": 1693340452961,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-30-08-02-error.log",
+            "hash": "127b4b3d397425281a3b73fec2b74a8d2fddef8209f065f6e3e7f0c5a3e1ef2e"
+        },
+        {
+            "date": 1693343227134,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-30-08-03-error.log",
+            "hash": "1f9c76b8392f56a8cf3eb0bbb1fa439507e9174ab298a2f002d20c747d7a9896"
+        },
+        {
+            "date": 1693415108489,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-30-08-23-error.log",
+            "hash": "a949d25002f5ad21ce40fd98fc2e35c6aa8079d077684370837ab72e2c164260"
+        },
+        {
+            "date": 1693420380197,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-31-08-00-error.log",
+            "hash": "df19921584218287de937f859d8fc66df351030e8dd2321182d123b7a3cdf3fb"
+        },
+        {
+            "date": 1693547255389,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-01-09-11-error.log",
+            "hash": "769fa6ed3f7417babe4d057e426d4de646a8fe2626013ebc2c3814a52b4fce1e"
         }
     ],
     "hashType": "sha256"
