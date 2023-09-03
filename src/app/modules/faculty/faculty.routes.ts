@@ -9,12 +9,13 @@ router.get('/', FacultyController.getAllFromDB);
 
 router.get('/:id', FacultyController.getByIdFromDB);
 
-
 router.post(
-    '/',
-    validateRequest(FacultyValidation.create),
-    FacultyController.insertIntoDB
+  '/',
+  validateRequest(FacultyValidation.create),
+  FacultyController.insertIntoDB
 );
 
+router.post('/:id/assign-courses', FacultyController.assignCourses);
+router.delete('/:id/remove-courses', FacultyController.removeCourses);
 
 export const facultyRoutes = router;
