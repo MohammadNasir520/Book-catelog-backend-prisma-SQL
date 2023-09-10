@@ -14,7 +14,18 @@ const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const updateOneInDB = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await SemesterRegistrationService.updateOneInDB(id, req.body);
+  sendResponse<SemesterRegistration>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'semester updated successfully',
+    data: result,
+  });
+});
 
 export const SemesterRegistrationController = {
   insertIntoDB,
+  updateOneInDB,
 };
