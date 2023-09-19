@@ -1,6 +1,4 @@
 import { OfferedCourse } from '@prisma/client';
-import httpStatus from 'http-status';
-import ApiError from '../../../errors/ApiError';
 import prisma from '../../../shared/prisma';
 import { asyncForEach } from '../../../shared/utils';
 import { ICreateOfferedCourse } from './offeredCourse.interface';
@@ -20,12 +18,12 @@ const insertIntoDB = async (
       },
     });
 
-    if (alreadyExist) {
-      throw new ApiError(
-        httpStatus.BAD_REQUEST,
-        'offered course already exist'
-      );
-    }
+    // if (alreadyExist) {
+    //   throw new ApiError(
+    //     httpStatus.BAD_REQUEST,
+    //     'offered course already exist'
+    //   );
+    // }
     if (!alreadyExist) {
       const insertOfferedCourse = await prisma.offeredCourse.create({
         data: {
