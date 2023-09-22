@@ -8,6 +8,46 @@ const insertIntoDB = async (data: User): Promise<User> => {
   return result;
 };
 
+const getAllFromDB = async (): Promise<User[]> => {
+  const result = await prisma.user.findMany();
+  return result;
+};
+
+const getByIdFromDB = async (id: string): Promise<User | null> => {
+  const result = await prisma.user.findUnique({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
+
+const updateIntoDB = async (
+  id: string,
+  payload: Partial<User>
+): Promise<User> => {
+  const result = await prisma.user.update({
+    where: {
+      id: id,
+    },
+    data: payload,
+  });
+  return result;
+};
+
+const deleteFromDB = async (id: string) => {
+  const result = await prisma.user.delete({
+    where: {
+      id: id,
+    },
+  });
+  return result;
+};
+
 export const UserService = {
   insertIntoDB,
+  getAllFromDB,
+  getByIdFromDB,
+  updateIntoDB,
+  deleteFromDB,
 };
