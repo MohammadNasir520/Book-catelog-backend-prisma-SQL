@@ -20,9 +20,6 @@ model User {
   address    String
   profileImg String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
   @@map("users")
 }
 
@@ -30,9 +27,7 @@ model Category {
   id    String @id @default(uuid())
   title String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  books     Book[]
+  books Book[]
 }
 
 // Create a Book model with the following fields:
@@ -57,7 +52,31 @@ model Book {
   category   Category @relation(fields: [categoryId], references: [id])
 }
 
+// Order Model
+// Create an Order model with the following fields:
+
+// id: A UUID generated using the @default(uuid()) attribute.
+// userId: A UUID representing the user who placed the order.
+// orderedBooks: A JSON field containing an array of objects, each with book ID and quantity.
+// status: A string with values 'pending', 'shipped', or 'delivered', defaulting to 'pending'.
+// createdAt: A DateTime field representing the order creation timestamp.
+
+model Order {
+  id           String      @id @default(uuid())
+  userId       String
+  orderedBooks Json
+  status       OrderStatus @default(pending)
+
+  createdAt DateTime @default(now())
+}
+
 enum UserRole {
   admin
   customer
+}
+
+enum OrderStatus {
+  pending
+  shipped
+  delivered
 }
