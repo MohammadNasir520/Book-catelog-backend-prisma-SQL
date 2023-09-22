@@ -32,6 +32,29 @@ model Category {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  books     Book[]
+}
+
+// Create a Book model with the following fields:
+
+// id: A UUID generated using the @default(uuid()) attribute.
+// title: A string representing the book's title.
+// author: A string representing the book's author.
+// price: A floating-point number representing the book's price.
+// genre: A string representing the book's genre.
+// publicationDate: A string field representing the book's publication date.
+// categoryId: A UUID representing the category to which the book belongs.
+
+model Book {
+  id              String @id @default(uuid())
+  title           String
+  author          String
+  price           Float
+  genre           String
+  publicationDate String
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
 }
 
 enum UserRole {
