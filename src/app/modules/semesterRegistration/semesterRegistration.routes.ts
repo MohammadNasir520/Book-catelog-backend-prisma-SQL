@@ -1,6 +1,8 @@
 import express from 'express';
 // import { ENUM_USER_ROLE } from '../../../enums/user';
 // import auth from '../../middlewares/auth';
+import { ENUM_USER_ROLE } from '../../../enums/user';
+import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { SemesterRegistrationController } from './semesterRegistration.controller';
 import { SemesterRegistrationValidation } from './semesterRegistration.validataion';
@@ -8,6 +10,12 @@ import { SemesterRegistrationValidation } from './semesterRegistration.validatai
 const router = express.Router();
 router.get('/', SemesterRegistrationController.getAllFromDB);
 router.get('/:id', SemesterRegistrationController.getByIdFromDB);
+
+router.post(
+  '/start-registration',
+  auth(ENUM_USER_ROLE.STUDENT),
+  SemesterRegistrationController.startMyRegistration
+);
 
 router.post('/', SemesterRegistrationController.insertIntoDB);
 router.patch(

@@ -6,96 +6,6 @@
     "auditLog": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\.c15a6231229e4838a40618a6ec10689e330a2539-audit.json",
     "files": [
         {
-            "date": 1693242938025,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-28-08-23-success.log",
-            "hash": "0beec68a9ddac0bcab5a2d38c318d02a87bcee399f818edae27f7c6b1be51e74"
-        },
-        {
-            "date": 1693255525691,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-29-08-02-success.log",
-            "hash": "114aa25c4efa106e2a5753a40744bc35fedd62d4a19f3668cfbfc8c2be7de3f1"
-        },
-        {
-            "date": 1693256635270,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-29-08-03-success.log",
-            "hash": "e6055d05dc7bcbf169778c9fa578b61a11f637f2f4a290c40fe4b57c12ed5388"
-        },
-        {
-            "date": 1693340452947,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-30-08-02-success.log",
-            "hash": "0cacd22bc6ccc57b83860a19298bb2ccf0571b3d5df6e850208001276545a9dc"
-        },
-        {
-            "date": 1693343227127,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-30-08-03-success.log",
-            "hash": "421720362947dcda2193baecdecbd897e7a12eb6e11440de1f6a73f68acf33f7"
-        },
-        {
-            "date": 1693415108478,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-30-08-23-success.log",
-            "hash": "b710a9f37b3e12da11c8f752c557ad14aef1e342e26b3b78bc65b51fdd81db06"
-        },
-        {
-            "date": 1693420380186,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-31-08-00-success.log",
-            "hash": "ea3116484a5811489213a6b43b4c238efabafd8bb272f950931d63b481925368"
-        },
-        {
-            "date": 1693547255378,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-01-09-11-success.log",
-            "hash": "b3059bc764fa9ad95213fb78b1dd30a7aa5e7415ab488e5671c0cafa8e3c483d"
-        },
-        {
-            "date": 1693552283598,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-01-09-13-success.log",
-            "hash": "86143c44bc5a9fc53be6847b772b3751deb7d5fd3f892ab177d3751838eb543c"
-        },
-        {
-            "date": 1693560972366,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-01-09-15-success.log",
-            "hash": "0554e0ae28228255e03a125265d72abd54d6b8c858faf665adc66e275d5c5f16"
-        },
-        {
-            "date": 1693562427432,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-01-09-16-success.log",
-            "hash": "3449e5161d1aa6a33d2587953f45b67d2d3f3bb925ed19db25d204961752482c"
-        },
-        {
-            "date": 1693566133542,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-01-09-17-success.log",
-            "hash": "4491c3e15f6cbf770a4c1c3e6e171d044611e3b25727f24e55b7baf28629631e"
-        },
-        {
-            "date": 1693721293357,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-03-09-12-success.log",
-            "hash": "edab91ac87535d9891ceb33c49596e7f79728230dd9c342b5d1401000a436c7f"
-        },
-        {
-            "date": 1693725055310,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-03-09-13-success.log",
-            "hash": "53e8f14629d4339184239d4d9e12ee34ce9ebdda4926198124d83dd37da59e9a"
-        },
-        {
-            "date": 1693730292974,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-03-09-14-success.log",
-            "hash": "6c50650f866988023b68e44b65b01c72b85d6003073959e37966125469256315"
-        },
-        {
-            "date": 1693734014933,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-03-09-15-success.log",
-            "hash": "c6270b59829dc8304e47fb7ab7fa5d912440cb5d655e79984f616348030e0e62"
-        },
-        {
-            "date": 1693736777469,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-03-09-16-success.log",
-            "hash": "a7bacf422d4f4049b29499c54db3657d3d5f3b49ad19d00e830b8a00a871761c"
-        },
-        {
-            "date": 1693744197942,
-            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-03-09-18-success.log",
-            "hash": "35046f730bb2c5a627bbf379387f4ee5f475fcc2b5c610c445246c68cdb9b373"
-        },
-        {
             "date": 1694373828375,
             "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-11-09-01-success.log",
             "hash": "0917dfe9864212af708f8be05e37555e646f7471a739b2bdaa6b0d65a359c2f9"
@@ -124,6 +34,41 @@
             "date": 1694431445544,
             "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-11-09-17-success.log",
             "hash": "39b22b67ce7c1b9b4d154ef7424b8ff5f1c2353b7d0658518a103cb98806fed3"
+        },
+        {
+            "date": 1695130623419,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-19-09-19-success.log",
+            "hash": "eed2d95c570638b1ff05c771e260e5210a632f0a61e5dd7f4b8473b7b42f6950"
+        },
+        {
+            "date": 1695146200125,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-19-09-23-success.log",
+            "hash": "92d8afa390c5b8ee65db43e7ba20820c272b50336513551b4534f141d8c691c2"
+        },
+        {
+            "date": 1695147044224,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-20-09-00-success.log",
+            "hash": "1b057e547e3fe04dbb2d324e07cecf1802ce09eef6e2eaa5217079c043f317d6"
+        },
+        {
+            "date": 1695304880565,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-21-09-20-success.log",
+            "hash": "db4fd4aa22a397a4f7f5e8b9f110dda03eb8b2ee9dd3322f0971e446166eb3db"
+        },
+        {
+            "date": 1695314017886,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-21-09-22-success.log",
+            "hash": "b93907132d3d34a2a53d6407344abc14fe9c13cda7879555c5722a94c9ce5600"
+        },
+        {
+            "date": 1695321628736,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-22-09-00-success.log",
+            "hash": "92ffbeec1e1f941ce9473e764bec32131eef3ea110933c8a0f26d79788186a2f"
+        },
+        {
+            "date": 1695323020736,
+            "name": "C:\\Projects\\appollo-level-2\\universityManagement\\coreService\\university-management-core-service-starter\\logs\\winston\\successes\\phu-2023-22-09-01-success.log",
+            "hash": "36bbbdde21c89aea70fb8935c7fe5a31717184645800bf84d21a8621f6a3ede8"
         }
     ],
     "hashType": "sha256"
