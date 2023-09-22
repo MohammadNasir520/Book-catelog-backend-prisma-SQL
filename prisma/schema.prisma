@@ -10,15 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// id: A UUID generated using the @default(uuid()) attribute.
-// name: A string representing the user's name.
-// email: A unique string representing the user's email.
-// password: A string representing the user's password.
-// role: A string with values 'admin' or 'customer'.
-// contactNo: A string for the user's contact number.
-// address: A string for the user's address.
-// profileImg: A string for the user's profile image.
-
 model User {
   id         String   @id @default(uuid())
   name       String
@@ -33,6 +24,14 @@ model User {
   updatedAt DateTime @updatedAt
 
   @@map("users")
+}
+
+model Category {
+  id    String @id @default(uuid())
+  title String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum UserRole {
