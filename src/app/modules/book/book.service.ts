@@ -63,10 +63,12 @@ const getAllFromDB = async (
             id: 'desc',
           },
   });
-
+  const total = await prisma.book.count({
+    where: whereConditions,
+  });
   return {
     meta: {
-      total: 0,
+      total,
       page,
       limit,
     },
