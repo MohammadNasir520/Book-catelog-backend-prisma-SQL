@@ -1,4 +1,4 @@
-import { Book } from '@prisma/client';
+import { Book, Prisma } from '@prisma/client';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
@@ -15,23 +15,58 @@ const insertIntoDB = async (data: Book): Promise<Book> => {
 };
 
 const getAllFromDB = async (
+  filters: any,
   options: IPaginationOptions
 ): Promise<IGenericResponse<Book[]>> => {
-  console.log(options);
-
   const { page, limit, skip } = paginationHelpers.calculatePagination(options);
+  const { searchTerm, ...filterData } = filters;
 
-  console.log(page, limit, skip);
+  const andConditions = [];
+
+  if (searchTerm) {
+    andConditions.push({
+      OR: ['title', 'genre'].map(field => ({
+        [field]: {
+          contains: searchTerm,
+          mode: 'insensitive',
+        },
+      })),
+
+      // OR: [
+      //   {
+      //     title: {
+      //       contains: searchTerm,
+      //       mode: 'insensitive',
+      //     },
+      //   },
+      //   {
+      //     genre: {
+      //       contains: searchTerm,
+      //       mode: 'insensitive',
+      //     },
+      //   },
+      // ],
+    });
+  }
+
+  const whereConditions: Prisma.BookWhereInput =
+    andConditions.length > 0 ? { AND: andConditions } : {};
 
   const result = await prisma.book.findMany({
+    where: whereConditions,
     include: {
       category: true,
     },
     skip,
     take: limit,
-    orderBy: {
-      [options.sortBy as string]: options.sortOrder,
-    },
+    orderBy:
+      options.sortBy && options.sortOrder
+        ? {
+            [options.sortBy as string]: options.sortOrder,
+          }
+        : {
+            id: 'desc',
+          },
   });
 
   return {
