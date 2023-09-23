@@ -18,7 +18,7 @@ const getAllFromDB = async (
   filters: any,
   options: IPaginationOptions
 ): Promise<IGenericResponse<Book[]>> => {
-  const { page, limit, skip } = paginationHelpers.calculatePagination(options);
+  const { page, size, skip } = paginationHelpers.calculatePagination(options);
   const { searchTerm, ...filterData } = filters;
 
   const andConditions = [];
@@ -53,7 +53,7 @@ const getAllFromDB = async (
       category: true,
     },
     skip,
-    take: limit,
+    take: size,
     orderBy:
       options.sortBy && options.sortOrder
         ? {
@@ -70,7 +70,7 @@ const getAllFromDB = async (
     meta: {
       total,
       page,
-      limit,
+      size,
     },
     data: result,
   };
