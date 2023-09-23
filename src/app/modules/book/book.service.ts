@@ -19,7 +19,7 @@ const getAllFromDB = async (
   options: IPaginationOptions
 ): Promise<IGenericResponse<Book[]>> => {
   const { page, size, skip } = paginationHelpers.calculatePagination(options);
-  const { searchTerm, ...filterData } = filters;
+  const { searchTerm, minPrice, maxPrice, ...filterData } = filters;
 
   const andConditions = [];
 
@@ -42,6 +42,28 @@ const getAllFromDB = async (
         },
       })),
     });
+  }
+
+  if (maxPrice !== undefined) {
+    const maxPriceFloat = parseFloat(maxPrice);
+    if (!isNaN(maxPriceFloat)) {
+      andConditions.push({
+        price: {
+          lte: maxPriceFloat,
+        },
+      });
+    }
+  }
+
+  if (minPrice !== undefined) {
+    const minPriceFloat = parseFloat(minPrice);
+    if (!isNaN(minPriceFloat)) {
+      andConditions.push({
+        price: {
+          gte: minPriceFloat,
+        },
+      });
+    }
   }
 
   const whereConditions: Prisma.BookWhereInput =
