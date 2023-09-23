@@ -25,27 +25,22 @@ const getAllFromDB = async (
 
   if (searchTerm) {
     andConditions.push({
-      OR: ['title', 'genre'].map(field => ({
+      OR: ['title', 'genre', 'author'].map(field => ({
         [field]: {
           contains: searchTerm,
           mode: 'insensitive',
         },
       })),
+    });
+  }
 
-      // OR: [
-      //   {
-      //     title: {
-      //       contains: searchTerm,
-      //       mode: 'insensitive',
-      //     },
-      //   },
-      //   {
-      //     genre: {
-      //       contains: searchTerm,
-      //       mode: 'insensitive',
-      //     },
-      //   },
-      // ],
+  if (Object.keys(filterData).length > 0) {
+    andConditions.push({
+      AND: Object.keys(filterData).map(key => ({
+        [key]: {
+          equals: filterData[key],
+        },
+      })),
     });
   }
 
