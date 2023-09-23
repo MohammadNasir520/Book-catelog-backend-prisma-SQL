@@ -72,41 +72,9 @@ const getAllFromDBForSpecificCustomer = async (
   return result;
 };
 
-const updateIntoDB = async (
-  id: string,
-  payload: Partial<Order>
-): Promise<Order> => {
-  const result = await prisma.order.update({
-    where: {
-      id: id,
-    },
-    data: payload,
-  });
-  return result;
-};
-
-const deleteFromDB = async (id: string) => {
-  const result = await prisma.order.delete({
-    where: {
-      id: id,
-    },
-  });
-  return result;
-};
-
-const getAllFromDBByCategoryId = async (
-  categoryId: string
-): Promise<Order[]> => {
-  const result = await prisma.order.findMany({});
-  return result;
-};
-
 export const OrderService = {
   insertIntoDB,
   getAllFromDB,
   getByIdFromDB,
-  updateIntoDB,
-  deleteFromDB,
-  getAllFromDBByCategoryId,
   getAllFromDBForSpecificCustomer,
 };

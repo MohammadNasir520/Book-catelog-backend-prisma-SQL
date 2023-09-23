@@ -21,7 +21,5 @@ router.get(
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.CUSTOMER),
   OrderController.getByIdFromDB
 );
-router.patch('/:id', auth(ENUM_USER_ROLE.ADMIN), OrderController.updateIntoDB);
-router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), OrderController.deleteFromDB);
 
 export const OrderRoutes = router;
