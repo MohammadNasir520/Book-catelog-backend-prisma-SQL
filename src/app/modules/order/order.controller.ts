@@ -28,8 +28,10 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
+  const user = req.user as JwtPayload;
+
   const { id } = req.params;
-  const result = await OrderService.getByIdFromDB(id);
+  const result = await OrderService.getByIdFromDB(user, id);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

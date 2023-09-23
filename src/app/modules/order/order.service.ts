@@ -1,5 +1,7 @@
 import { Order } from '@prisma/client';
+import httpStatus from 'http-status';
 import { JwtPayload } from 'jsonwebtoken';
+import ApiError from '../../../errors/ApiError';
 import prisma from '../../../shared/prisma';
 import { OrderInput } from './order.interface';
 
@@ -34,12 +36,29 @@ const getAllFromDB = async (
   }
 };
 
-const getByIdFromDB = async (id: string): Promise<Order | null> => {
+const getByIdFromDB = async (
+  user: JwtPayload,
+  id: string
+): Promise<Order | null> => {
   const result = await prisma.order.findUnique({
     where: {
       id,
     },
   });
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'order not found');
+  }
+
+  if (
+    (user.role === 'customer' && user.userId != result?.userId) ||
+    user.role != 'admin'
+  ) {
+    throw new ApiError(
+      httpStatus.UNAUTHORIZED,
+      'hei thief, you are not the creator of the order'
+    );
+  }
+
   return result;
 };
 const getAllFromDBForSpecificCustomer = async (
