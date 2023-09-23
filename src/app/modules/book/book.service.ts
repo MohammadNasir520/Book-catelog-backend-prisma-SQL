@@ -19,7 +19,7 @@ const getAllFromDB = async (
   options: IPaginationOptions
 ): Promise<IGenericResponse<Book[]>> => {
   const { page, size, skip } = paginationHelpers.calculatePagination(options);
-  const { searchTerm, minPrice, maxPrice, ...filterData } = filters;
+  const { searchTerm, minPrice, maxPrice, category, ...filterData } = filters;
 
   const andConditions = [];
 
@@ -41,6 +41,14 @@ const getAllFromDB = async (
           equals: filterData[key],
         },
       })),
+    });
+  }
+
+  if (category) {
+    andConditions.push({
+      categoryId: {
+        equals: category,
+      },
     });
   }
 
