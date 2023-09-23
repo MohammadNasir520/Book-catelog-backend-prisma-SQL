@@ -16,7 +16,7 @@ model User {
   email      String   @unique
   password   String
   role       UserRole
-  contacNo   String
+  contactNo  String
   address    String
   profileImg String
 
@@ -30,16 +30,6 @@ model Category {
   books Book[]
 }
 
-// Create a Book model with the following fields:
-
-// id: A UUID generated using the @default(uuid()) attribute.
-// title: A string representing the book's title.
-// author: A string representing the book's author.
-// price: A floating-point number representing the book's price.
-// genre: A string representing the book's genre.
-// publicationDate: A string field representing the book's publication date.
-// categoryId: A UUID representing the category to which the book belongs.
-
 model Book {
   id              String @id @default(uuid())
   title           String
@@ -51,15 +41,6 @@ model Book {
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
 }
-
-// Order Model
-// Create an Order model with the following fields:
-
-// id: A UUID generated using the @default(uuid()) attribute.
-// userId: A UUID representing the user who placed the order.
-// orderedBooks: A JSON field containing an array of objects, each with book ID and quantity.
-// status: A string with values 'pending', 'shipped', or 'delivered', defaulting to 'pending'.
-// createdAt: A DateTime field representing the order creation timestamp.
 
 model Order {
   id           String      @id @default(uuid())
