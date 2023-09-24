@@ -1,13 +1,16 @@
 import express from 'express';
 import { ENUM_USER_ROLE } from '../../../enums/user';
 import auth from '../../middlewares/auth';
+import validateRequest from '../../middlewares/validateRequest';
 import { OrderController } from './order.controller';
+import { OrderVaildation } from './order.validation';
 
 const router = express.Router();
 
 router.post(
   '/create-order',
   auth(ENUM_USER_ROLE.CUSTOMER),
+  validateRequest(OrderVaildation.orderCreateZodSchema),
   OrderController.insertIntoDB
 );
 router.get(
