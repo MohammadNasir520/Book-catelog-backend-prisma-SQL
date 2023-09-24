@@ -44,12 +44,21 @@ const getByIdFromDB = async (id: string): Promise<Partial<User | null>> => {
 const updateIntoDB = async (
   id: string,
   payload: Partial<User>
-): Promise<User> => {
+): Promise<Partial<User>> => {
   const result = await prisma.user.update({
     where: {
       id: id,
     },
     data: payload,
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      contactNo: true,
+      address: true,
+      profileImg: true,
+    },
   });
   return result;
 };

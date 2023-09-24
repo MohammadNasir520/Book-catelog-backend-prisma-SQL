@@ -20,6 +20,10 @@ app.use('/api/v1', routes);
 //global error handler
 app.use(globalErrorHandler);
 
+app.get('/', async (req, res) => {
+  res.send('book catelog server is running');
+});
+
 //handle not found
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(httpStatus.NOT_FOUND).json({
