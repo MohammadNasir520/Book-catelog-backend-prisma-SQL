@@ -48,11 +48,16 @@ const getByIdFromDB = async (
   if (!result) {
     throw new ApiError(httpStatus.NOT_FOUND, 'order not found');
   }
+  console.log(user.role, user.userId, result.userId);
 
-  if (
-    (user.role === 'customer' && user.userId != result?.userId) ||
-    user.role != 'admin'
-  ) {
+  if (user.role == 'customer' && user.userId == result?.userId) {
+    throw new ApiError(
+      httpStatus.UNAUTHORIZED,
+      'hei thief, you are not the creator of the order 2'
+    );
+  }
+
+  if (user.userId == result?.userId && user.role != 'admin') {
     throw new ApiError(
       httpStatus.UNAUTHORIZED,
       'hei thief, you are not the creator of the order'
