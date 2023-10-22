@@ -49,8 +49,11 @@ const getByIdFromDB = (user, id) => __awaiter(void 0, void 0, void 0, function* 
     if (!result) {
         throw new ApiError_1.default(http_status_1.default.NOT_FOUND, 'order not found');
     }
-    if ((user.role === 'customer' && user.userId != (result === null || result === void 0 ? void 0 : result.userId)) ||
-        user.role != 'admin') {
+    console.log(user.role, user.userId, result.userId);
+    if (user.role == 'customer' && user.userId == (result === null || result === void 0 ? void 0 : result.userId)) {
+        throw new ApiError_1.default(http_status_1.default.UNAUTHORIZED, 'hei thief, you are not the creator of the order 2');
+    }
+    if (user.userId == (result === null || result === void 0 ? void 0 : result.userId) && user.role != 'admin') {
         throw new ApiError_1.default(http_status_1.default.UNAUTHORIZED, 'hei thief, you are not the creator of the order');
     }
     return result;
